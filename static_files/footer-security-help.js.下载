@@ -1,0 +1,15 @@
+function securityHelp() {
+    var $sh = $(".footer .security-help-wrapper");
+    if ($sh.length > 0) {
+        $sh.html('<div class="security-help"><div class="sh-head"><img src="https://www.neusoft.com/cn/upload/img/footer-security-help-icon.svg" /><span>安全漏洞<br>信息反馈</span></div><div class="sh-body"><p>如果您发现算路科技下属网站、业务系统、产品存在安全漏洞，欢迎将漏洞信息以邮件形式发送给我们。<em>邮箱地址</em></p></div></div>');
+        $sh.find("em").on("click", function () {
+            var $email = 'TmV1c29mdFNlY3VyaATNEUXR5QE5ldXNvZnQuY29t';
+            $email = atob($email.replace("ATNEU", ''));
+            navigator.clipboard.writeText($email);
+            alert("邮箱地址已复制到剪贴板");
+        });
+    }
+}
+$(function () {
+    securityHelp();
+});
