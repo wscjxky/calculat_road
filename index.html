@@ -211,10 +211,10 @@
             <div class="global-navigation">
                 <div class="top-menu">
                     <ul>
-                        <li class=""><a data-menu="menu-industry" href="http://calway-tech.com/industry/">行业</a></li>
+                        <li class=""><a data-menu="menu-industry" >行业</a></li>
 
-                        <li class=""><a data-menu="menu-service" href="http://calway-tech.com/services/">服务</a></li>
-                        <li><a data-menu="menu-about-neusoft" href="http://calway-tech.com/about/">关于算路科技</a></li>
+                        <li class=""><a data-menu="menu-service">服务</a></li>
+                        <li><a data-menu="menu-about-neusoft" href="http://calway-tech.com/about.html">关于算路科技</a></li>
                     </ul>
                 </div>
                 <div class="top-menu-panel" style="width: 1903px;">
@@ -327,8 +327,7 @@
                                                     </a>
                                                     <div class="sub-items">
                                                         <ul>
-                                                            <li><a
-                                                                    href="http://calway-tech.com/services/2491/">小肿瘤测定</a>
+                                                            <li><a href="http://calway-tech.com/小肿瘤测定.html">小肿瘤测定</a>
                                                             </li>
                                                             <li><a href="http://calway-tech.com/services/2492/">药品筛选</a>
                                                             </li>
@@ -800,7 +799,8 @@
                             </div>
                             <div class="text">
                                 <h2>助力创新传统医患管理平台</h2>
-                                <p>融合现代医学与新兴科技，集成医疗信息、医患信息、疾病信息等数据，实现医院运营管理的数字化，并在人工智能、大数据等技术辅助下，优化远程医疗服务体验，从而缓解医疗资源紧张。</p>
+                                <p>融合现代医学与新兴科技，集成医疗信息、医患信息、疾病信息等数据，实现医院运营管理的数字化，并在人工智能、大数据等技术辅助下，优化远程医疗服务体验，从而缓解医疗资源紧张。
+                                </p>
                                 <div class="btn"><a href="http://calway-tech.com/2507/7770140456.html">了解更多</a></div>
                                 <div class="btn-more">
                                     <a href="http://calway-tech.com/2507/">查看全部医疗相关产品&gt;&gt;</a>
@@ -817,7 +817,7 @@
                             <div class="text">
                                 <h2>AI技术致力于解决城市水务管理难题</h2>
                                 <p>该平台将物联网与人工智能技术深层次结合，
-<br>
+                                    <br>
                                     利用物联网与AI、大数据、云计算等新兴科技，对能源系统进行数字化改造、模块化整合优化，协助客户搭建可观、可控和决策、智能调度的智慧能源生态系统。</p>
                                 <div class="btn"><a href="http://calway-tech.com/products/2499/">了解更多</a></div>
 
@@ -896,7 +896,7 @@
             </div>
         </div>
 
-        
+
         <div class="section-target">
             <div class="section-target-main">
                 <ul>
@@ -1025,25 +1025,27 @@
     <script type="text/javascript" src="./static_files/jweixin-1.2.0.js.下载"></script>
     <script>
         $(function () {
-            var url = location.href.split('#')[0];//url不能写死
+            var url = location.href.split('#')[0]; //url不能写死
             $.ajax({
                 type: "get",
                 url: "/cn/showcombodata.jsp?code=wechat",
                 dataType: "json",
                 async: false,
-                data: { url: url },
+                data: {
+                    url: url
+                },
                 success: function (data) {
                     //alert(JSON.stringify(data));
                     wx.config({
-                        debug: false,////生产环境需要关闭debug模式
-                        appId: data.appid,//appId通过微信服务号后台查看
-                        timestamp: data.timestamp,//生成签名的时间戳
-                        nonceStr: data.nonceStr,//生成签名的随机字符串
-                        signature: data.signature,//签名
-                        jsApiList: [//需要调用的JS接口列表
-                            'checkJsApi',//判断当前客户端版本是否支持指定JS接口
-                            'onMenuShareTimeline',//分享给好友
-                            'onMenuShareAppMessage'//分享到朋友圈
+                        debug: false, ////生产环境需要关闭debug模式
+                        appId: data.appid, //appId通过微信服务号后台查看
+                        timestamp: data.timestamp, //生成签名的时间戳
+                        nonceStr: data.nonceStr, //生成签名的随机字符串
+                        signature: data.signature, //签名
+                        jsApiList: [ //需要调用的JS接口列表
+                            'checkJsApi', //判断当前客户端版本是否支持指定JS接口
+                            'onMenuShareTimeline', //分享给好友
+                            'onMenuShareAppMessage' //分享到朋友圈
                         ]
                     });
                     wx.ready(function () {
@@ -1055,7 +1057,8 @@
                             title: '算路科技',
                             desc: '来自算路科技官方网站的分享', // 分享描述
                             link: link,
-                            imgUrl: protocol + '//' + host + '/cn/img/wechat_sharing.jpg', // 自定义图标
+                            imgUrl: protocol + '//' + host +
+                                '/cn/img/wechat_sharing.jpg', // 自定义图标
                             trigger: function (res) {
                                 // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回.
                                 //alert('click shared');
@@ -1076,7 +1079,8 @@
                             title: '算路科技', // 分享标题
                             desc: '来自算路科技官方网站的分享', // 分享描述
                             link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                            imgUrl: protocol + '//' + host + '/cn/img/wechat_sharing.jpg', // 自定义图标
+                            imgUrl: protocol + '//' + host +
+                                '/cn/img/wechat_sharing.jpg', // 自定义图标
                             type: 'link', // 分享类型,music、video或link，不填默认为link
                             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                             success: function () {

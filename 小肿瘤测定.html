@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://calway-tech.com/%E6%99%BA%E6%85%A7%E5%8C%BB%E7%96%97.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="算路科技创立于2021年，一直以来致力于以信息技术的创新，推动社会发展，创造美好生活。算路科技以软件技术为核心，业务领域覆盖智慧城市、医疗健康及软件产品与服务。">
+    <meta name="keywords" content="算路科技,算路科技,Neusoft">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="applicable-device" content="pc,mobile">
+    <title>算路科技</title>
+    <link rel="stylesheet" href="./static_files/neusoft.min.css">
+    <link rel="stylesheet" href="./static_files/20210106-2507.css">
+    <script src="./static_files/push.js.下载"></script><script src="./static_files/hm.js.下载"></script><script src="./static_files/push.js(1).下载"></script>
+    <script src="./static_files/hm.js(1).下载"></script>
+    <script src="./static_files/neusoft.js.下载"></script>
+    <style type="text/css">
+        /* Copyright 2014-present Evernote Corporation. All rights reserved. */
+        @keyframes caretBlink {
+            from {
+                opacity: 1.0;
+            }
+
+            to {
+                opacity: 0.0;
+            }
+        }
+
+        @keyframes rotateSpinner {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #text-tool-caret {
+            animation-name: caretBlink;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+            animation-duration: 1s;
+        }
+
+        #en-markup-loading-spinner {
+            position: absolute;
+            top: calc(50% - 16px);
+            left: calc(50% - 16px);
+            width: 32px;
+            height: 32px;
+        }
+
+        #en-markup-loading-spinner img {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            animation-name: rotateSpinner;
+            animation-duration: 0.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    </style>
+    <style type="text/css">
+        /* Copyright 2014-present Evernote Corporation. All rights reserved. */
+        .skitchToastBoxContainer {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 30px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            pointer-events: none;
+        }
+
+        .skitchToastBox {
+            width: 200px;
+            height: 16px;
+            padding: 12px;
+            background-color: rgba(47, 55, 61, 0.95);
+            border-radius: 4px;
+            color: white;
+            cursor: default;
+            font-size: 10pt;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.32);
+            font-family: 'Soleil', Helvetica, Arial, sans-serif;
+            border: 2px rgba(255, 255, 255, 0.38) solid;
+        }
+
+        .lang-zh-cn .skitchToastBox {
+            font-family: '微软雅黑', 'Microsoft YaHei', SimSun,
+                '&#x30E1;&#x30A4;&#x30EA;&#x30AA;', Meiryo, 'MS PGothic', 'Soleil',
+                Helvetica, Arial, sans-serif;
+        }
+
+        .lang-ja-jp .skitchToastBox {
+            font-family: '&#x30E1;&#x30A4;&#x30EA;&#x30AA;', Meiryo, 'MS PGothic',
+                '微软雅黑', 'Microsoft YaHei', SimSun, 'Soleil', Helvetica, Arial,
+                sans-serif;
+        }
+
+        .skitchToast {
+            padding-left: 20px;
+            padding-right: 20px;
+            display: inline-block;
+            height: 10px;
+            color: #f1f5f8;
+            text-align: center;
+        }
+
+        .skitchVisible {
+            /* Don't remove this class it's a hack used by the Evernote Clipper */
+        }
+    </style>
+    <style type="text/css">
+        /* Copyright 2014-present Evernote Corporation. All rights reserved. */
+    </style>
+    <style type="text/css">
+        /* Copyright 2019-present Evernote Corporation. All rights reserved. */
+
+        #en-markup-disabled {
+            position: fixed;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            cursor: default;
+            -webkit-user-select: none;
+        }
+
+        #en-markup-alert-container {
+            position: absolute;
+            z-index: 9999;
+            width: 450px;
+            left: calc(50% - 225px);
+            top: calc(50% - 85px);
+            background-color: white;
+            box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.35);
+            -webkit-user-select: none;
+        }
+
+
+        #en-markup-alert-container .cell-2 {
+            position: relative;
+            float: left;
+            width: 345px;
+            margin-top: 29px;
+            margin-bottom: 20px;
+        }
+
+        #en-markup-alert-container .cell-2 .cell-2-title {
+            margin-bottom: 5px;
+            padding-right: 30px;
+            font-size: 12pt;
+            font-family: Tahoma, Arial;
+        }
+
+        #en-markup-alert-container .cell-2 .cell-2-message {
+            padding-right: 30px;
+            font-size: 9.5pt;
+            font-family: Tahoma, Arial;
+        }
+
+        #en-markup-alert-container .cell-3 {
+            position: relative;
+            width: 450px;
+            height: 60px;
+            float: left;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #en-markup-alert-container .cell-3 button {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            width: 110px;
+            height: 36px;
+        }
+
+        #en-markup-alert-container .cell-3 button.alt-button {
+            position: absolute;
+            top: 12px;
+            right: 140px;
+            width: 110px;
+            height: 36px;
+        }
+    </style>
+</head>
+
+<body class="website common-header common-footer homepage-black" style="">
+    <img src="./static_files/neusoft.jpg" alt="算路科技" class="visuallyhidden">
+    <div class="layout">
+        <div class="header">
+            <div class="logo"><a href="http://calway-tech.com/"><img src="./static_files/logo.png" alt="算路科技"></a></div>
+            <!-- large screen navigation -->
+            <div class="global-navigation">
+                <div class="top-menu">
+                    <ul>
+                        <li class=""><a data-menu="menu-industry" href="http://calway-tech.com/industry/">行业</a></li>
+
+                        <li class=""><a data-menu="menu-service" href="http://calway-tech.com/services/">服务</a></li>
+                        <li><a data-menu="menu-about-neusoft" href="http://calway-tech.com/about/">关于算路科技</a></li>
+                    </ul>
+                </div>
+                <div class="top-menu-panel" style="width: 1471.2px;">
+
+                    <div id="menu-industry" class="menu-container">
+                        <div class="menu-section" style="height: 0px; min-height: 0px;">
+                            <ul>
+                                <li class="active"><a>行业</a>
+                                    <div class="menu-list animate">
+                                        <div class="menu-list-wrapper has-recommend">
+                                            <ul class="hasicon">
+                                                <li><a href="http://calway-tech.com/%E6%99%BA%E6%85%A7%E5%8C%BB%E7%96%97.html">
+                                                        <div class="icon"><img src="./static_files/yiliaojiankang.svg" alt="智慧医疗"></div>
+                                                        智慧医疗
+                                                    </a></li>
+                                                <li><a href="http://calway-tech.com/Isound.html">
+                                                        <div class="icon"><img src="./static_files/dianxin.svg" alt="iSound pro"> </div>
+                                                        iSound pro
+                                                    </a></li>
+                                                <li><a href="http://calway-tech.com/智慧出行.html">
+                                                        <div class="icon"><img src="./static_files/nengyuan.svg" alt="智慧出行"> </div>
+                                                        智慧出行
+                                                    </a></li>
+                                                <li><a href="http://calway-tech.com/智慧停车.html">
+                                                        <div class="icon"><img src="./static_files/jinrong.svg" alt="金融"> </div>
+                                                        智慧停车
+                                                    </a></li>
+
+                                                <li><a href="http://calway-tech.com/%E6%99%BA%E6%85%A7%E6%A0%A1%E5%9B%AD.html">
+                                                        <div class="icon"><img src="./static_files/jiaoyu.svg" alt="教育">
+                                                        </div>
+                                                        智慧校园
+                                                    </a></li>
+                                                <li><a href="http://calway-tech.com/%E6%99%BA%E6%85%A7%E6%B0%B4%E5%8A%A1.html">
+                                                        <div class="icon"><img src="./static_files/zhihuizhengwu.svg" alt="智慧政务"></div>
+                                                        智慧水务
+                                                    </a></li>
+                                                <li><a href="http://calway-tech.com/%E6%99%BA%E6%85%A7%E8%83%BD%E6%BA%90.html">
+                                                        <div class="icon"><img src="./static_files/keji.svg" alt="科技">
+                                                        </div>
+                                                        智慧能源
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="menu-service" class="menu-container">
+                        <div class="menu-section" style="height: 0px; min-height: 0px;">
+                            <ul>
+                                <li class="active"><a class="active">服务</a>
+                                    <div class="menu-list animate">
+                                        <div class="menu-list-wrapper">
+                                            <ul class="hasicon horizontal">
+                                                <div class="li-wrap">
+                                                    <li><a href="http://calway-tech.com/services/2469/">
+                                                            <div class="icon"><img src="./static_files/chanpingongchengfuwu.svg" alt="产品工程服务"></div>
+                                                            人工智能算法服务
+                                                        </a>
+                                                        <div class="sub-items">
+                                                            <ul>
+                                                                <li><a href="http://calway-tech.com/services/2491/">红绿灯实时优化</a>
+                                                                </li>
+                                                                <li><a href="http://calway-tech.com/services/2492/">能源调优系统</a>
+                                                                </li>
+                                                                <li><a href="http://calway-tech.com/services/2492/">联合智慧水表</a>
+                                                                </li>
+                                                                <li><a href="http://calway-tech.com/services/2492/">立体停车场</a>
+                                                                </li>
+                                                                <li><a href="http://calway-tech.com/services/2492/">校园监控+摄像头安防</a>
+                                                                </li>
+                                                                <li><a href="http://calway-tech.com/services/2492/">iSound</a>
+                                                                </li>
+                                                                <li><a href="http://calway-tech.com/services/2492/">北京量子研究院</a>
+                                                                </li>
+                                                                <li><a href="http://calway-tech.com/services/2492/">北京道路研究院</a>
+                                                                </li>
+                                                                <li><a href="http://calway-tech.com/services/2492/">智慧医疗</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </div>
+
+                                                <li><a href="http://calway-tech.com/services/2468/">
+                                                        <div class="icon"><img src="./static_files/ruanjiangongchengfuwu.svg" alt="生物工程软件服务">
+                                                        </div>
+                                                        生物工程软件服务
+                                                    </a>
+                                                    <div class="sub-items">
+                                                        <ul>
+                                                            <li><a href="http://calway-tech.com/services/2491/">小肿瘤测定</a>
+                                                            </li>
+                                                            <li><a href="http://calway-tech.com/services/2492/">药品筛选</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="menu-about-neusoft" class="menu-container">
+                        <div class="menu-section" style="height: 0px; min-height: 0px;">
+                            <ul>
+                                <li class="active"><a>了解算路科技</a>
+                                    <div class="menu-list">
+                                        <div class="menu-list-wrapper">
+                                            <ul>
+                                                <li><a href="http://calway-tech.com/about/1758/">公司介绍</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- large screen navigation end -->
+            <!-- small client navigation -->
+            <div class="global-nav smallClient">
+                <div class="togglebtn"><span></span><span></span><span></span></div>
+                <nav class="small-nav" role="navigation">
+                    <ul id="small-menu" class="smallacc level-1">
+
+                        <li class="has-submenu"><div class="clickable"></div>
+                            <div class="clickable"></div><a href="http://calway-tech.com/services/">服务<div class="plus-icon"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style type="text/css">path{fill:#ccc}</style></defs><path d="M922.576565 474.354299l-371.566162 0.116401V101.40738c0-20.681253-16.785832-37.467086-37.469093-37.467086s-37.467086 16.785832-37.467086 37.467086v372.802421l-377.448427-0.208719h-0.112388c-20.645129 0-37.390823 16.673445-37.467085 37.356705-0.112387 20.68326 16.637321 37.505217 37.316567 37.579473l377.709327 0.20872v373.699511c0 20.719385 16.785832 37.469093 37.465078 37.469093 20.68326 0 37.469093-16.749708 37.469093-37.469093V549.406878l371.265125-0.118408h0.146504c20.647136 0 37.39283-16.673445 37.4711-37.356705 0.07827-20.681253-16.669431-37.50321-37.312553-37.577466z"></path></svg></div><div class="plus-icon"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style type="text/css">path{fill:#ccc}</style></defs><path d="M922.576565 474.354299l-371.566162 0.116401V101.40738c0-20.681253-16.785832-37.467086-37.469093-37.467086s-37.467086 16.785832-37.467086 37.467086v372.802421l-377.448427-0.208719h-0.112388c-20.645129 0-37.390823 16.673445-37.467085 37.356705-0.112387 20.68326 16.637321 37.505217 37.316567 37.579473l377.709327 0.20872v373.699511c0 20.719385 16.785832 37.469093 37.465078 37.469093 20.68326 0 37.469093-16.749708 37.469093-37.469093V549.406878l371.265125-0.118408h0.146504c20.647136 0 37.39283-16.673445 37.4711-37.356705 0.07827-20.681253-16.669431-37.50321-37.312553-37.577466z"></path></svg></div></a>
+                            <ul class="level-2 sub-menu" style="height: auto; display: none;">
+                                <li class="has-submenu"><div class="clickable"></div>
+                                    <div class="clickable"></div><a href="http://calway-tech.com/services/2469/">产品工程服务
+                                        <div class="plus-icon"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style type="text/css">path{fill:#ccc}</style></defs><path d="M922.576565 474.354299l-371.566162 0.116401V101.40738c0-20.681253-16.785832-37.467086-37.469093-37.467086s-37.467086 16.785832-37.467086 37.467086v372.802421l-377.448427-0.208719h-0.112388c-20.645129 0-37.390823 16.673445-37.467085 37.356705-0.112387 20.68326 16.637321 37.505217 37.316567 37.579473l377.709327 0.20872v373.699511c0 20.719385 16.785832 37.469093 37.465078 37.469093 20.68326 0 37.469093-16.749708 37.469093-37.469093V549.406878l371.265125-0.118408h0.146504c20.647136 0 37.39283-16.673445 37.4711-37.356705 0.07827-20.681253-16.669431-37.50321-37.312553-37.577466z"></path></svg></div>
+                                    <div class="plus-icon"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style type="text/css">path{fill:#ccc}</style></defs><path d="M922.576565 474.354299l-371.566162 0.116401V101.40738c0-20.681253-16.785832-37.467086-37.469093-37.467086s-37.467086 16.785832-37.467086 37.467086v372.802421l-377.448427-0.208719h-0.112388c-20.645129 0-37.390823 16.673445-37.467085 37.356705-0.112387 20.68326 16.637321 37.505217 37.316567 37.579473l377.709327 0.20872v373.699511c0 20.719385 16.785832 37.469093 37.465078 37.469093 20.68326 0 37.469093-16.749708 37.469093-37.469093V549.406878l371.265125-0.118408h0.146504c20.647136 0 37.39283-16.673445 37.4711-37.356705 0.07827-20.681253-16.669431-37.50321-37.312553-37.577466z"></path></svg></div></a>
+                                    <ul class="level-3 sub-menu" style="height: auto; display: none;">
+                                        <li><a href="http://calway-tech.com/services/2491/">汽车电子</a></li>
+                                        <li><a href="http://calway-tech.com/services/2492/">数字家庭产品及智能设备</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="http://calway-tech.com/services/2468/">软件工程服务</a></li>
+                                <li><a href="http://calway-tech.com/services/2470/">性能工程服务</a></li>
+                                <li class="has-submenu"><div class="clickable"></div>
+                                    <div class="clickable"></div><a href="http://calway-tech.com/#0">专业化测试服务<div class="plus-icon"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style type="text/css">path{fill:#ccc}</style></defs><path d="M922.576565 474.354299l-371.566162 0.116401V101.40738c0-20.681253-16.785832-37.467086-37.469093-37.467086s-37.467086 16.785832-37.467086 37.467086v372.802421l-377.448427-0.208719h-0.112388c-20.645129 0-37.390823 16.673445-37.467085 37.356705-0.112387 20.68326 16.637321 37.505217 37.316567 37.579473l377.709327 0.20872v373.699511c0 20.719385 16.785832 37.469093 37.465078 37.469093 20.68326 0 37.469093-16.749708 37.469093-37.469093V549.406878l371.265125-0.118408h0.146504c20.647136 0 37.39283-16.673445 37.4711-37.356705 0.07827-20.681253-16.669431-37.50321-37.312553-37.577466z"></path></svg></div><div class="plus-icon"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style type="text/css">path{fill:#ccc}</style></defs><path d="M922.576565 474.354299l-371.566162 0.116401V101.40738c0-20.681253-16.785832-37.467086-37.469093-37.467086s-37.467086 16.785832-37.467086 37.467086v372.802421l-377.448427-0.208719h-0.112388c-20.645129 0-37.390823 16.673445-37.467085 37.356705-0.112387 20.68326 16.637321 37.505217 37.316567 37.579473l377.709327 0.20872v373.699511c0 20.719385 16.785832 37.469093 37.465078 37.469093 20.68326 0 37.469093-16.749708 37.469093-37.469093V549.406878l371.265125-0.118408h0.146504c20.647136 0 37.39283-16.673445 37.4711-37.356705 0.07827-20.681253-16.669431-37.50321-37.312553-37.577466z"></path></svg></div></a>
+                                    <ul class="level-3 sub-menu" style="height: auto; display: none;">
+                                        <li><a href="http://calway-tech.com/services/2224/">产品测试服务</a></li>
+                                        <li><a href="http://calway-tech.com/services/2223/">接续性测试服务</a></li>
+                                        <li><a href="http://calway-tech.com/services/2225/">应用系统测试</a></li>
+                                        <li><a href="http://calway-tech.com/services/2242/">移动终端自动化测试平台</a></li>
+                                        <li><a href="http://calway-tech.com/services/2478/">算路科技软件评测实验室评测服务</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="has-submenu"><div class="clickable"></div>
+                                    <div class="clickable"></div><a href="http://calway-tech.com/#0">一站式BPO服务<div class="plus-icon"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style type="text/css">path{fill:#ccc}</style></defs><path d="M922.576565 474.354299l-371.566162 0.116401V101.40738c0-20.681253-16.785832-37.467086-37.469093-37.467086s-37.467086 16.785832-37.467086 37.467086v372.802421l-377.448427-0.208719h-0.112388c-20.645129 0-37.390823 16.673445-37.467085 37.356705-0.112387 20.68326 16.637321 37.505217 37.316567 37.579473l377.709327 0.20872v373.699511c0 20.719385 16.785832 37.469093 37.465078 37.469093 20.68326 0 37.469093-16.749708 37.469093-37.469093V549.406878l371.265125-0.118408h0.146504c20.647136 0 37.39283-16.673445 37.4711-37.356705 0.07827-20.681253-16.669431-37.50321-37.312553-37.577466z"></path></svg></div><div class="plus-icon"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style type="text/css">path{fill:#ccc}</style></defs><path d="M922.576565 474.354299l-371.566162 0.116401V101.40738c0-20.681253-16.785832-37.467086-37.469093-37.467086s-37.467086 16.785832-37.467086 37.467086v372.802421l-377.448427-0.208719h-0.112388c-20.645129 0-37.390823 16.673445-37.467085 37.356705-0.112387 20.68326 16.637321 37.505217 37.316567 37.579473l377.709327 0.20872v373.699511c0 20.719385 16.785832 37.469093 37.465078 37.469093 20.68326 0 37.469093-16.749708 37.469093-37.469093V549.406878l371.265125-0.118408h0.146504c20.647136 0 37.39283-16.673445 37.4711-37.356705 0.07827-20.681253-16.669431-37.50321-37.312553-37.577466z"></path></svg></div></a>
+                                    <ul class="level-3 sub-menu" style="height: auto; display: none;">
+                                        <li><a href="http://calway-tech.com/services/2203/">客户联络中心服务</a></li>
+                                        <li><a href="http://calway-tech.com/services/2204/">IT服务</a></li>
+                                        <li><a href="http://calway-tech.com/services/2206/">流程自动化服务</a></li>
+                                        <li><a href="http://calway-tech.com/services/2207/">数字营销服务</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu"><div class="clickable"></div>
+                            <div class="clickable"></div><a href="http://calway-tech.com/about/">关于算路科技<div class="plus-icon"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style type="text/css">path{fill:#ccc}</style></defs><path d="M922.576565 474.354299l-371.566162 0.116401V101.40738c0-20.681253-16.785832-37.467086-37.469093-37.467086s-37.467086 16.785832-37.467086 37.467086v372.802421l-377.448427-0.208719h-0.112388c-20.645129 0-37.390823 16.673445-37.467085 37.356705-0.112387 20.68326 16.637321 37.505217 37.316567 37.579473l377.709327 0.20872v373.699511c0 20.719385 16.785832 37.469093 37.465078 37.469093 20.68326 0 37.469093-16.749708 37.469093-37.469093V549.406878l371.265125-0.118408h0.146504c20.647136 0 37.39283-16.673445 37.4711-37.356705 0.07827-20.681253-16.669431-37.50321-37.312553-37.577466z"></path></svg></div><div class="plus-icon"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style type="text/css">path{fill:#ccc}</style></defs><path d="M922.576565 474.354299l-371.566162 0.116401V101.40738c0-20.681253-16.785832-37.467086-37.469093-37.467086s-37.467086 16.785832-37.467086 37.467086v372.802421l-377.448427-0.208719h-0.112388c-20.645129 0-37.390823 16.673445-37.467085 37.356705-0.112387 20.68326 16.637321 37.505217 37.316567 37.579473l377.709327 0.20872v373.699511c0 20.719385 16.785832 37.469093 37.465078 37.469093 20.68326 0 37.469093-16.749708 37.469093-37.469093V549.406878l371.265125-0.118408h0.146504c20.647136 0 37.39283-16.673445 37.4711-37.356705 0.07827-20.681253-16.669431-37.50321-37.312553-37.577466z"></path></svg></div></a>
+                            <ul class="level-2 sub-menu" style="height: auto; display: none;">
+                                <li class="has-submenu"><div class="clickable"></div>
+                                    <div class="clickable"></div><a href="http://calway-tech.com/#">了解算路科技<div class="plus-icon"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style type="text/css">path{fill:#ccc}</style></defs><path d="M922.576565 474.354299l-371.566162 0.116401V101.40738c0-20.681253-16.785832-37.467086-37.469093-37.467086s-37.467086 16.785832-37.467086 37.467086v372.802421l-377.448427-0.208719h-0.112388c-20.645129 0-37.390823 16.673445-37.467085 37.356705-0.112387 20.68326 16.637321 37.505217 37.316567 37.579473l377.709327 0.20872v373.699511c0 20.719385 16.785832 37.469093 37.465078 37.469093 20.68326 0 37.469093-16.749708 37.469093-37.469093V549.406878l371.265125-0.118408h0.146504c20.647136 0 37.39283-16.673445 37.4711-37.356705 0.07827-20.681253-16.669431-37.50321-37.312553-37.577466z"></path></svg></div><div class="plus-icon"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style type="text/css">path{fill:#ccc}</style></defs><path d="M922.576565 474.354299l-371.566162 0.116401V101.40738c0-20.681253-16.785832-37.467086-37.469093-37.467086s-37.467086 16.785832-37.467086 37.467086v372.802421l-377.448427-0.208719h-0.112388c-20.645129 0-37.390823 16.673445-37.467085 37.356705-0.112387 20.68326 16.637321 37.505217 37.316567 37.579473l377.709327 0.20872v373.699511c0 20.719385 16.785832 37.469093 37.465078 37.469093 20.68326 0 37.469093-16.749708 37.469093-37.469093V549.406878l371.265125-0.118408h0.146504c20.647136 0 37.39283-16.673445 37.4711-37.356705 0.07827-20.681253-16.669431-37.50321-37.312553-37.577466z"></path></svg></div></a>
+                                    <ul class="level-3 sub-menu" style="height: auto; display: none;">
+                                        <li><a href="http://calway-tech.com/about/introduction/">公司介绍</a></li>
+                                        <!-- <li><a href="http://calway-tech.com/about/1759/">愿景与使命</a></li> -->
+                                        <!-- <li><a href="http://calway-tech.com/about/1760/">社会责任</a></li> -->
+                                        <!-- <li><a href="http://calway-tech.com/about/1764/">资质认证</a></li> -->
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- hero -->
+        <script>
+            $(function () {
+                $(".brand-2022-featured").imagesLoaded({
+                    background: true
+                }, function () {
+                    $(".brand-2022-featured .brand-2022-bg").addClass("show");
+                    $(".brand-2022-featured img").addClass("show");
+                });
+            });
+        </script>
+        <style type="text/css">
+            .brand-2022-featured {
+                width: 100%;
+                height: auto;
+                position: relative;
+                overflow: hidden;
+                background-color: #03050c;
+            }
+
+            .brand-2022-featured:after {
+                content: "";
+                width: 100%;
+                padding-top: 50%;
+                z-index: -1;
+                display: block;
+                position: relative;
+            }
+
+            .brand-2022-featured a,
+            .brand-2022-featured a:link {
+                display: block;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+                z-index: 10;
+            }
+
+            .brand-2022-featured .brand-2022-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                background: url('https://www.neusoft.com/cn/upload/img/about/220628/hero-220628.jpg') center center / cover no-repeat;
+                opacity: 0;
+                transform-origin: center center;
+                transform: scale(1);
+            }
+
+            .brand-2022-featured .brand-2022-bg.show {
+                opacity: 1;
+                transition: 1s;
+                transform: scale(1.05);
+            }
+
+            .brand-2022-featured img {
+                position: absolute;
+                width: 35%;
+                max-width: 560px;
+                top: 14%;
+                right: 10%;
+                transform: scale(0.98);
+                z-index: 5;
+                user-select: none;
+                pointer-events: none;
+                opacity: 0;
+                transform-origin: center center;
+            }
+
+            .brand-2022-featured img.show {
+                opacity: 1;
+                transition: 1.2s;
+                transform: scale(1);
+                transition-delay: 0.6s;
+            }
+
+            .brand-2022-featured .text {
+                position: absolute;
+                left: 6%;
+                bottom: 9%;
+                z-index: 3;
+                color: #ffffff;
+                font-size: 42px;
+                line-height: 1.5;
+                text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            .brand-2022-featured .text span {
+                font-size: 24px;
+                padding-top: 10px;
+            }
+
+            .brand-2022-featured .mobile-can-wrap {
+                display: none;
+            }
+
+            @media (max-width:1600px) {
+                .brand-2022-featured .text {
+                    font-size: 36px;
+                }
+
+                .brand-2022-featured .text span {
+                    font-size: 20px;
+                }
+
+                .brand-2022-featured .brand-2022-bg {
+                    background: url('https://www.neusoft.com/cn/upload/img/about/220628/hero-220628-1920.jpg') center center / cover no-repeat;
+                }
+
+                .brand-2022-featured img {
+                    width: 34%;
+                    max-width: 460px;
+                    transform: scale(0.96);
+                }
+
+                .brand-2022-featured img.show {
+                    transform: scale(1);
+                }
+
+                .brand-2022-featured:before {
+                    background: linear-gradient(45deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.4) 100%);
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 3;
+                    content: "";
+                    display: block;
+                    position: absolute;
+                }
+            }
+
+            @media (max-width:1200px) {
+                .brand-2022-featured .text {
+                    font-size: 2.6vw;
+                }
+
+                .brand-2022-featured .text span {
+                    font-size: 1.8vw;
+                }
+            }
+
+            @media (max-width:600px) {
+                .brand-2022-featured .brand-2022-bg {
+                    background: url('https://www.neusoft.com/cn/upload/img/about/220628/hero-220628-mobile.jpg') center center / cover no-repeat;
+                }
+
+                .brand-2022-featured:after {
+                    padding-top: 100%;
+                }
+
+
+                .brand-2022-featured .brand-2022-bg.show {
+                    transform: scale(1.03);
+                }
+
+                .brand-2022-featured img {
+                    width: 46%;
+                    top: 8%;
+                    right: 10%;
+                    transform: scale(0.95);
+                }
+
+                .brand-2022-featured img.show {
+                    transform: scale(1);
+                }
+
+                .brand-2022-featured .text {
+                    font-size: 5vw;
+                    left: 7%;
+                }
+
+                .brand-2022-featured .text span {
+                    font-size: 2.8vw;
+                }
+
+                .brand-2022-featured .mobile-can-wrap {
+                    display: block;
+                }
+            }
+        </style>
+        <div class="wrapper" style="background: white;">
+            <div class="breadcrumb bglightgray" style="height:300px;background-image: url(https://cdn.pd1.cn/wp-content/uploads/2021/02/%E6%91%84%E5%9B%BE%E7%BD%91_300857596_banner_%E7%99%8C%E7%97%87%E5%85%8D%E7%96%AB%E6%B2%BB%E7%96%97%E7%A7%8D%E4%BA%BA%E7%B1%BB%E5%85%8D%E7%96%AB%E7%B3%BB%E7%BB%9F%E6%B2%BB%E7%96%97%E7%A7%8D%E7%94%9F%E7%89%A9%E5%8C%BB%E5%AD%A6%E7%94%9F%E7%89%A9%E5%8C%BB%E5%AD%A6%E8%82%BF%E7%98%A4%E5%AD%A6%E6%B2%BB%E7%96%97%E5%88%A9%E7%94%A8%E4%BA%BA%E4%BD%93%E7%9A%84%E8%87%AA%E7%84%B6T%E7%BB%86%E8%83%9E%E6%88%98%E6%96%97%E7%89%B9%E4%B8%89%E7%BB%B4%E6%B8%B2%E6%9F%93%EF%BC%88%E4%BC%81%E4%B8%9A%E5%95%86%E7%94%A8%EF%BC%89.jpg) ">
+                <div class="wrap w1200">
+                    <ul>
+                        <li><a href="http://calway-tech.com/">首页</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="pagename">
+                    <h1>AI生物：小鼠肿瘤测定</h1>
+
+                </div>
+            </div>
+            <div class="news-content w1200">
+
+                <div class="post-entry">
+
+                    <div class="entry-content">
+                        <link rel="stylesheet" href="./static_files/style.css">
+                        <p>将结构生物学结合前沿的AI算法和深度学习技术，从氨基酸序列预测蛋白质形态，建模蛋白质与小分子的关系，在靶点发现、药物发现和老药新用等领域取得明显突破；
+                            高准确率的算法模型和符合科学性的3D小分子建模等技术进一步提高产品优势。
+                        </p>
+                        <p><h2>背景技术</h2></p>
+                        <p>癌症是全球死亡率最高的疾病之一。根据2021年国际癌症研究机构团队发布的报告，2040年全球可能面临癌症疾病治疗负担。快速筛查与癌症相关的阳性突变细胞能够加快癌症的诊断速度，是缓解此问题的一个有效方法。
+                            细胞内基因组发生恶性突变是导致癌症的主要原因。现有的医疗技术通常通过对患者细胞切片进行染色，并依靠人工对阳性突变细胞进行筛查。这总方式费时费力，效率低下，成本较高。
+                            
+                        </p>
+                        <p><h2>创新技术</h2></p>
+                        <p>近年来，随着计算机技术的发展，利用计算机技术与生物、医疗领域相结合成为了研究热点。利用YOLO、DETR等目标检测算法可以对细胞切片图像中的各类细胞进行检测，但此类方法通常只能够检测出细胞，无法对细胞种类（如炎症细胞、阴性细胞、阳性细胞等）进行准确判断。其中，阳性突变细胞细胞核较大，因此核质比较大，可以通过图像底层特征快速、直接地进行筛选。因此，本发明首先利用YOLOv5目标检测算法检测出尿路上皮细胞切片图像中的所有细胞，而后针对不同种类的细胞，基于核质比筛选出阳性的突变细胞，从而实现癌症的快速筛查，节省人力、物力、财力，具有较高的应用价值。
+                        </p>
+                        <p align="center"><img src="static_files/exp1.jpg" alt="" width="1200" height="1000"/></p>
+    
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-nav">
+                <ul>
+                    <li>
+                        <h3> <a href="http://calway-tech.com/about/"> 关于算路科技</a> </h3>
+                        <ul>
+                            <li> <a href="http://calway-tech.com/about/1758/"> 公司介绍</a> </li>
+                            <li> <a href="http://calway-tech.com/about/1759/"> 愿景与使命</a> </li>
+                            <li> <a href="http://calway-tech.com/about/1760/"> 社会责任</a> </li>
+                            <li> <a href="http://calway-tech.com/about/1871/"> 工作机会</a> </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h3>投资者</h3>
+                        <ul>
+                            <li> <a href="http://calway-tech.com/investor/1771/"> 公司治理</a> </li>
+                            <li> <a href="http://calway-tech.com/investor/1774/"> 股本变化</a> </li>
+                            <li> <a href="http://calway-tech.com/investor/index.jsp?type=1776"> 公司公告</a> </li>
+                            <li> <a href="http://calway-tech.com/investor/1772/"> 财务报告</a> </li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <h3>联系我们</h3>
+                        <ul>
+                            <li> <a href="http://calway-tech.com/1785/"> 业务咨询</a> </li>
+                            <li> <a href="http://calway-tech.com/1787/"> 售后咨询</a> </li>
+                            <li> <a href="http://calway-tech.com/1788/"> 其它咨询</a> </li>
+                            <li><a href="http://calway-tech.com/1784/"> 致电咨询</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <div class="footer-qr-code">
+                    <div>
+                        <p>
+                            <!-- <img src="./static_files/qr-code-1x.png"
+                                srcset="https://www.neusoft.com/cn/upload/img/qr-code-1x.png 1x,   https://www.neusoft.com/cn/upload/img/qr-code-2x.png 2x,   https://www.neusoft.com/cn/upload/img/qr-code-2x.png 3x"
+                                alt="欢迎关注算路科技微信">  -->
+                        </p>
+                        <p> 欢迎关注算路科技微信<br>
+                            <!-- <em> 微信号：neusoft600718</em> -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p> <a href="http://calway-tech.com/sitemap/"> 网站地图</a> | <a href="http://calway-tech.com/1789/">
+                        使用条款</a> | <a href="http://calway-tech.com/1790/"> 隐私条约</a></p>
+                <p> 版权所有 © 2001-2022 算路科技股份有限公司</p>
+                <!--  -->
+            </div>
+            <link rel="stylesheet" href="./static_files/footer-security-help.css">
+            <script src="./static_files/footer-security-help.js.下载"></script>
+                    </div>
+    </div>
+    <div class="bkt" style="display: none; opacity: 1;"> </div>
+    <script type="text/javascript" src="./static_files/jweixin-1.2.0.js.下载"></script>
+    <script>
+        $(function () {
+            var url = location.href.split('#')[0]; //url不能写死
+            $.ajax({
+                type: "get",
+                url: "/cn/showcombodata.jsp?code=wechat",
+                dataType: "json",
+                async: false,
+                data: {
+                    url: url
+                },
+                success: function (data) {
+                    //alert(JSON.stringify(data));
+                    wx.config({
+                        debug: false, ////生产环境需要关闭debug模式
+                        appId: data.appid, //appId通过微信服务号后台查看
+                        timestamp: data.timestamp, //生成签名的时间戳
+                        nonceStr: data.nonceStr, //生成签名的随机字符串
+                        signature: data.signature, //签名
+                        jsApiList: [ //需要调用的JS接口列表
+                            'checkJsApi', //判断当前客户端版本是否支持指定JS接口
+                            'onMenuShareTimeline', //分享给好友
+                            'onMenuShareAppMessage' //分享到朋友圈
+                        ]
+                    });
+                    wx.ready(function () {
+                        var link = window.location.href;
+                        var protocol = window.location.protocol;
+                        var host = window.location.host;
+                        //分享朋友圈
+                        wx.onMenuShareTimeline({
+                            title: '算路科技',
+                            desc: '来自算路科技官方网站的分享', // 分享描述
+                            link: link,
+                            imgUrl: protocol + '//' + host +
+                                '/cn/img/wechat_sharing.jpg', // 自定义图标
+                            trigger: function (res) {
+                                // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回.
+                                //alert('click shared');
+                            },
+                            success: function (res) {
+                                //alert('shared success');
+                                //some thing you should do
+                            },
+                            cancel: function (res) {
+                                //alert('shared cancle');
+                            },
+                            fail: function (res) {
+                                //alert(JSON.stringify(res));
+                            }
+                        });
+                        //分享给好友
+                        wx.onMenuShareAppMessage({
+                            title: '算路科技', // 分享标题
+                            desc: '来自算路科技官方网站的分享', // 分享描述
+                            link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                            imgUrl: protocol + '//' + host +
+                                '/cn/img/wechat_sharing.jpg', // 自定义图标
+                            type: 'link', // 分享类型,music、video或link，不填默认为link
+                            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                            success: function () {
+                                // 用户确认分享后执行的回调函数
+                                //alert("success");
+
+                            },
+                            cancel: function () {
+                                // 用户取消分享后执行的回调函数
+                            },
+                            fail: function (res) {
+                                //					   alert(res.errMsg);
+                            }
+                        });
+                        wx.error(function (res) {
+                            //alert(res.errMsg);
+                        });
+                    });
+                },
+                error: function (xhr, status, error) {
+                    //alert(status);
+                    //alert(xhr.responseText);
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+</body></html>
